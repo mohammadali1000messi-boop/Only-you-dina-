@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(180deg, #e6f4ff, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 82%;
+  max-width: 400px;
+  height: 85%;
+  background: linear-gradient(180deg, #bfe7ff, #ffffff);
+  border-radius: 26px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* متن */
+.text {
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+.line {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: show 0.8s ease forwards;
+}
+
+@keyframes show {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* قلب‌ها */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: pink;
+  transform: rotate(-45deg);
+  opacity: 0.6;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before { top: -10px; left: 0; }
+.heart::after { left: 10px; top: 0; }
+
+/* ستاره‌ها */
+.star {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: red;
+  opacity: 0.3;
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- قلب‌ها -->
+  <div class="heart" style="top:8%; left:6%;"></div>
+  <div class="heart" style="top:22%; right:8%; transform:rotate(25deg);"></div>
+  <div class="heart" style="top:60%; left:10%; transform:rotate(-20deg);"></div>
+  <div class="heart" style="top:12%; right:15%; transform:rotate(15deg);"></div>
+  <div class="heart" style="top:45%; left:30%; transform:rotate(-10deg);"></div>
+  <div class="heart" style="top:55%; right:25%; transform:rotate(5deg);"></div>
+  <div class="heart" style="top:75%; left:18%; transform:rotate(-30deg);"></div>
+  <div class="heart" style="top:80%; right:8%; transform:rotate(20deg);"></div>
+  <div class="heart" style="top:65%; left:50%; transform:rotate(-15deg);"></div>
+  <div class="heart" style="top:30%; right:35%; transform:rotate(10deg);"></div>
+  <div class="heart" style="top:50%; left:65%; transform:rotate(-20deg);"></div>
+  <div class="heart" style="top:20%; right:50%; transform:rotate(15deg);"></div>
+  <div class="heart" style="top:70%; left:35%; transform:rotate(5deg);"></div>
+  <div class="heart" style="top:60%; right:30%; transform:rotate(-10deg);"></div>
+
+  <!-- ستاره‌ها -->
+  <div class="star" style="top:35%; right:20%;"></div>
+  <div class="star" style="top:70%; right:12%;"></div>
+  <div class="star" style="top:25%; left:25%;"></div>
+  <div class="star" style="top:50%; left:40%;"></div>
+  <div class="star" style="top:65%; right:50%;"></div>
+  <div class="star" style="top:40%; right:45%;"></div>
+  <div class="star" style="top:60%; left:60%;"></div>
+  <div class="star" style="top:15%; right:30%;"></div>
+  <div class="star" style="top:55%; left:15%;"></div>
+  <div class="star" style="top:20%; left:50%;"></div>
+
+  <!-- متن -->
+  <div class="text">
+    <div class="line" style="animation-delay:0.5s">My dear Dina ♥️</div>
+    <div class="line" style="animation-delay:1.4s">Spending a month by your side</div>
+    <div class="line" style="animation-delay:2.3s">has filled my life with warmth,</div>
+    <div class="line" style="animation-delay:3.2s">positive energy, understanding,</div>
+    <div class="line" style="animation-delay:4.1s">and a renewed passion for living.</div>
+    <div class="line" style="animation-delay:5s">Thank you for being you,</div>
+    <div class="line" style="animation-delay:5.9s">one of the most beautiful things</div>
+    <div class="line" style="animation-delay:6.8s">in my life ✨😍</div>
+    <div class="line" style="animation-delay:7.7s">Happy one-month anniversary</div>
+    <div class="line" style="animation-delay:8.6s">of our acquaintance.</div>
+  </div>
+
+  <!-- موزیک مثل قبل -->
+  <audio id="music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+</div>
+
+<script>
+const music = document.getElementById("music");
+music.addEventListener('canplaythrough', () => {
+  music.play().catch(()=>{});
+});
+</script>
+
+</body>
+    </html>
