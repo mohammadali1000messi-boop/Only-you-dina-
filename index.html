@@ -18,12 +18,12 @@ body {
 }
 
 .container {
-  width: 82%;
-  max-width: 400px;
+  width: 85%;
+  max-width: 420px;
   height: 85%;
   background: linear-gradient(180deg, #bfe7ff, #ffffff);
-  border-radius: 26px;
-  padding: 20px;
+  border-radius: 28px;
+  padding: 22px;
   box-sizing: border-box;
   position: relative;
   display: flex;
@@ -41,8 +41,8 @@ body {
 
 .line {
   opacity: 0;
-  transform: translateY(10px);
-  animation: show 0.8s ease forwards;
+  transform: translateY(12px);
+  animation: show 0.9s ease forwards;
 }
 
 @keyframes show {
@@ -57,7 +57,7 @@ body {
   position: absolute;
   width: 20px;
   height: 20px;
-  background: pink;
+  background: #ff6b8a;
   transform: rotate(-45deg);
   opacity: 0.6;
 }
@@ -67,7 +67,7 @@ body {
   content: "";
   width: 20px;
   height: 20px;
-  background: pink;
+  background: #ff6b8a;
   border-radius: 50%;
   position: absolute;
 }
@@ -80,8 +80,8 @@ body {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: red;
-  opacity: 0.3;
+  background: #ffb703;
+  opacity: 0.35;
   clip-path: polygon(
     50% 0%,
     61% 35%,
@@ -103,32 +103,22 @@ body {
 <div class="container">
 
   <!-- قلب‌ها -->
-  <div class="heart" style="top:8%; left:6%;"></div>
-  <div class="heart" style="top:22%; right:8%; transform:rotate(25deg);"></div>
-  <div class="heart" style="top:60%; left:10%; transform:rotate(-20deg);"></div>
-  <div class="heart" style="top:12%; right:15%; transform:rotate(15deg);"></div>
-  <div class="heart" style="top:45%; left:30%; transform:rotate(-10deg);"></div>
-  <div class="heart" style="top:55%; right:25%; transform:rotate(5deg);"></div>
-  <div class="heart" style="top:75%; left:18%; transform:rotate(-30deg);"></div>
-  <div class="heart" style="top:80%; right:8%; transform:rotate(20deg);"></div>
-  <div class="heart" style="top:65%; left:50%; transform:rotate(-15deg);"></div>
-  <div class="heart" style="top:30%; right:35%; transform:rotate(10deg);"></div>
-  <div class="heart" style="top:50%; left:65%; transform:rotate(-20deg);"></div>
-  <div class="heart" style="top:20%; right:50%; transform:rotate(15deg);"></div>
-  <div class="heart" style="top:70%; left:35%; transform:rotate(5deg);"></div>
-  <div class="heart" style="top:60%; right:30%; transform:rotate(-10deg);"></div>
+  <div class="heart" style="top:6%; left:6%;"></div>
+  <div class="heart" style="top:18%; right:8%; transform:rotate(20deg);"></div>
+  <div class="heart" style="top:45%; left:10%; transform:rotate(-20deg);"></div>
+  <div class="heart" style="top:70%; right:12%; transform:rotate(15deg);"></div>
+  <div class="heart" style="top:30%; right:30%; transform:rotate(-10deg);"></div>
+  <div class="heart" style="top:60%; left:35%; transform:rotate(5deg);"></div>
+  <div class="heart" style="top:80%; left:20%; transform:rotate(-25deg);"></div>
 
   <!-- ستاره‌ها -->
-  <div class="star" style="top:35%; right:20%;"></div>
-  <div class="star" style="top:70%; right:12%;"></div>
-  <div class="star" style="top:25%; left:25%;"></div>
-  <div class="star" style="top:50%; left:40%;"></div>
-  <div class="star" style="top:65%; right:50%;"></div>
-  <div class="star" style="top:40%; right:45%;"></div>
-  <div class="star" style="top:60%; left:60%;"></div>
-  <div class="star" style="top:15%; right:30%;"></div>
-  <div class="star" style="top:55%; left:15%;"></div>
-  <div class="star" style="top:20%; left:50%;"></div>
+  <div class="star" style="top:22%; left:22%;"></div>
+  <div class="star" style="top:38%; right:18%;"></div>
+  <div class="star" style="top:55%; left:55%;"></div>
+  <div class="star" style="top:68%; right:40%;"></div>
+  <div class="star" style="top:15%; right:45%;"></div>
+  <div class="star" style="top:48%; left:15%;"></div>
+  <div class="star" style="top:75%; right:20%;"></div>
 
   <!-- متن -->
   <div class="text">
@@ -144,19 +134,13 @@ body {
     <div class="line" style="animation-delay:8.6s">of our acquaintance.</div>
   </div>
 
-  <!-- موزیک مثل قبل -->
-  <audio id="music" autoplay loop>
+  <!-- موزیک (قابل دیدن و پلی دستی) -->
+  <audio controls style="width:100%; margin-top:25px;">
     <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
 
 </div>
 
-<script>
-const music = document.getElementById("music");
-music.addEventListener('canplaythrough', () => {
-  music.play().catch(()=>{});
-});
-</script>
-
 </body>
-    </html>
+</html>
