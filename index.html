@@ -3,143 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For You</title>
-
+<title>One Month Anniversary</title>
 <style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: linear-gradient(180deg, #e6f4ff, #ffffff);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Arial, sans-serif;
-  overflow: hidden;
-}
-
-.container {
-  width: 85%;
-  max-width: 420px;
-  height: 85%;
-  background: linear-gradient(180deg, #bfe7ff, #ffffff);
-  border-radius: 28px;
-  padding: 22px;
-  box-sizing: border-box;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-/* متن */
-.text {
-  text-align: center;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.line {
-  opacity: 0;
-  transform: translateY(12px);
-  animation: show 0.9s ease forwards;
-}
-
-@keyframes show {
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  body {
+    margin:0;
+    padding:0;
+    background: linear-gradient(to bottom, #87CEFA, #ffffff); /* آبی آسمانی به سفید */
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-}
+  .text-box {
+    width: 60%;
+    text-align: center;
+    font-size: 1.2em;
+    color: #111;
+    line-height: 1.6em;
+  }
+  .text-box span {
+    opacity: 0;
+    display: block;
+    animation: fadeIn 2s forwards;
+  }
+  .text-box span:nth-child(1){animation-delay: 0s;}
+  .text-box span:nth-child(2){animation-delay: 2s;}
+  .text-box span:nth-child(3){animation-delay: 4s;}
+  .text-box span:nth-child(4){animation-delay: 6s;}
 
-/* قلب‌ها */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #ff6b8a;
-  transform: rotate(-45deg);
-  opacity: 0.6;
-}
+  @keyframes fadeIn {
+    to { opacity:1; }
+  }
 
-.heart::before,
-.heart::after {
-  content: "";
-  width: 20px;
-  height: 20px;
-  background: #ff6b8a;
-  border-radius: 50%;
-  position: absolute;
-}
+  /* قلب و ستاره */
+  .emoji {
+    position: absolute;
+    font-size: 2rem;
+    opacity: 0.5;
+    animation: floatUp 8s infinite;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(100vh) rotate(0deg);}
+    100% { transform: translateY(-50px) rotate(360deg);}
+  }
 
-.heart::before { top: -10px; left: 0; }
-.heart::after { left: 10px; top: 0; }
-
-/* ستاره‌ها */
-.star {
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: #ffb703;
-  opacity: 0.35;
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-}
+  /* موزیک */
+  .music-box {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+  .music-box audio {
+    width: 300px;
+  }
 </style>
 </head>
-
 <body>
 
-<div class="container">
+<!-- متن انیمیشن -->
+<div class="text-box">
+  <span>My dear Dina ♥️</span>
+  <span>Spending a month by your side has filled my life with warmth, positive energy, understanding, and a renewed passion for living.</span>
+  <span>Thank you for being you one of the most beautiful things in my life ✨😍</span>
+  <span>«Happy one-month anniversary of our acquaintance.»</span>
+</div>
 
-  <!-- قلب‌ها -->
-  <div class="heart" style="top:6%; left:6%;"></div>
-  <div class="heart" style="top:18%; right:8%; transform:rotate(20deg);"></div>
-  <div class="heart" style="top:45%; left:10%; transform:rotate(-20deg);"></div>
-  <div class="heart" style="top:70%; right:12%; transform:rotate(15deg);"></div>
-  <div class="heart" style="top:30%; right:30%; transform:rotate(-10deg);"></div>
-  <div class="heart" style="top:60%; left:35%; transform:rotate(5deg);"></div>
-  <div class="heart" style="top:80%; left:20%; transform:rotate(-25deg);"></div>
+<!-- قلب و ستاره ها -->
+<div class="emoji" style="left:10%; top:70%;">❤️</div>
+<div class="emoji" style="left:20%; top:60%;">💖</div>
+<div class="emoji" style="left:35%; top:80%;">⭐</div>
+<div class="emoji" style="left:50%; top:75%;">💖</div>
+<div class="emoji" style="left:65%; top:70%;">❤️</div>
+<div class="emoji" style="left:80%; top:60%;">⭐</div>
+<div class="emoji" style="left:90%; top:80%;">💖</div>
+<div class="emoji" style="left:45%; top:85%;">⭐</div>
 
-  <!-- ستاره‌ها -->
-  <div class="star" style="top:22%; left:22%;"></div>
-  <div class="star" style="top:38%; right:18%;"></div>
-  <div class="star" style="top:55%; left:55%;"></div>
-  <div class="star" style="top:68%; right:40%;"></div>
-  <div class="star" style="top:15%; right:45%;"></div>
-  <div class="star" style="top:48%; left:15%;"></div>
-  <div class="star" style="top:75%; right:20%;"></div>
-
-  <!-- متن -->
-  <div class="text">
-    <div class="line" style="animation-delay:0.5s">My dear Dina ♥️</div>
-    <div class="line" style="animation-delay:1.4s">Spending a month by your side</div>
-    <div class="line" style="animation-delay:2.3s">has filled my life with warmth,</div>
-    <div class="line" style="animation-delay:3.2s">positive energy, understanding,</div>
-    <div class="line" style="animation-delay:4.1s">and a renewed passion for living.</div>
-    <div class="line" style="animation-delay:5s">Thank you for being you,</div>
-    <div class="line" style="animation-delay:5.9s">one of the most beautiful things</div>
-    <div class="line" style="animation-delay:6.8s">in my life ✨😍</div>
-    <div class="line" style="animation-delay:7.7s">Happy one-month anniversary</div>
-    <div class="line" style="animation-delay:8.6s">of our acquaintance.</div>
-  </div>
-
-  <!-- موزیک (قابل دیدن و پلی دستی) -->
-  <audio controls style="width:100%; margin-top:25px;">
-    <source src="music.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
+<!-- موزیک -->
+<div class="music-box">
+  <audio controls>
+    <source src="bg_audio_01.mp3" type="audio/mpeg">
+    مرورگر شما از پخش صوت پشتیبانی نمی‌کند
   </audio>
-
 </div>
 
 </body>
